@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <script src="{{ url_for('dashboard.static', filename='scripts.js') }}"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('dashboard.static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Machine Data Dashboard</h1>
+    <table>
+        <tr>
+            <th>Machine ID</th>
+            <th>Temperature</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for item in data %}
+        <tr>
+            <td>{{ item[1] }}</td>
+            <td>{{ item[2] }}</td>
+            <td>{{ item[3] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
